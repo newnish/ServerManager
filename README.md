@@ -1,17 +1,60 @@
-# ServerManager 🎯
+<style>
+  body {
+    background-color: #0a0e27 !important;
+    color: #e0e0e0 !important;
+  }
+  
+  .markdown-body {
+    background-color: #0a0e27 !important;
+    color: #e0e0e0 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #5865F2 !important;
+  }
+  
+  a {
+    color: #7289DA !important;
+  }
+  
+  code {
+    background-color: #1a1f3a !important;
+    color: #00ff00 !important;
+  }
+  
+  pre {
+    background-color: #1a1f3a !important;
+    color: #00ff00 !important;
+  }
+  
+  table {
+    border-color: #5865F2 !important;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #0f1428 !important;
+  }
+</style>
 
-<div align="center">
-  <img src="LOGO.svg" width="200" height="200" alt="ServerManager Logo">
+<div align="center" style="padding: 40px 0; background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);">
+  
+  <img src="LOGO.svg" width="400" height="400" alt="ServerManager Logo" style="margin-bottom: 30px; filter: drop-shadow(0 0 20px rgba(88, 101, 242, 0.3));">
+  
+  # ServerManager 🎯
   
   **A Discord bot that handles your server for you.**
   
-  Perfect for quickly setting up organized communities with channels, categories, roles, and welcome messages.
+  *Perfect for quickly setting up organized communities with channels, categories, roles, and welcome messages.*
 
-  ---
+  <br/>
 
   [![Discord Invite](https://img.shields.io/badge/Discord-Invite_ServerManager-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/api/oauth2/authorize?client_id=1486709634982088744&permissions=8&scope=bot)
 
-  ---
+  <br/>
+  
+  [![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=flat-square&logo=github)](https://github.com/Evilman34/template-bot)
+  [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
 </div>
 
 ## Features
