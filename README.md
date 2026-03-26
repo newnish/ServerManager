@@ -1,6 +1,12 @@
 # Template Bot 🎯
 
-A Discord bot that creates server structures from JSON templates. Perfect for quickly setting up organized communities with channels, categories, roles, and welcome messages.
+<div align="center">
+  <img src="LOGO.svg" width="200" height="200" alt="Template Bot Logo">
+  
+  **A Discord bot that creates server structures from JSON templates.**
+  
+  Perfect for quickly setting up organized communities with channels, categories, roles, and welcome messages.
+</div>
 
 ## Features
 
