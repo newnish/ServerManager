@@ -6,6 +6,12 @@
   **A Discord bot that handles your server for you.**
   
   Perfect for quickly setting up organized communities with channels, categories, roles, and welcome messages.
+
+  ---
+
+  [![Discord Invite](https://img.shields.io/badge/Discord-Invite_ServerManager-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID_HERE&permissions=8&scope=bot)
+
+  ---
 </div>
 
 ## Features
@@ -17,6 +23,16 @@
 - 📋 **`!help`** — View all commands
 - 🎭 **Dynamic Server Names** — Customize with `--name` flag
 - 🔧 **Custom Templates** — Create your own server templates
+
+## Quick Start
+
+### Add ServerManager to Your Server
+
+Click the Discord invite button above to add ServerManager to your server with full permissions!
+
+> **Note:** Replace `YOUR_CLIENT_ID_HERE` in the button link with your actual bot Client ID from the [Discord Developer Portal](https://discord.com/developers/applications)
+
+---
 
 ## Getting Started
 
