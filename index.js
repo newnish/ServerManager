@@ -246,6 +246,14 @@ client.on('messageCreate', async (message) => {
       if (template.roles && template.roles.length > 0) {
         for (const roleData of template.roles) {
           try {
+            // Check if role already exists to avoid duplicates
+            const existingRole = guild.roles.cache.find(r => r.name === roleData.name);
+            if (existingRole) {
+              console.log(`⚠️ Role already exists: ${roleData.name}`);
+              roleMap[roleData.name] = existingRole;
+              continue;
+            }
+
             // Convert permission strings to PermissionsBitField
             let permissions = [];
             if (roleData.permissions && roleData.permissions.length > 0) {
