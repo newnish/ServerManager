@@ -5,10 +5,53 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, ChannelType, PermissionsBitField } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
+const Database = require('better-sqlite3');
 
-// ===== WELCOME FEATURE CONFIG =====
-// Track enabled welcome channels per server (guildId => channelId)
-const welcomeChannels = {};
+// ===== DATABASE SETUP =====
+// Initialize SQLite database for persistent settings
+const db = new Database(path.join(__dirname, 'servermanager.db'));
+
+// Create tables if they don't exist
+db.exec(`
+  CREATE TABLE IF NOT EXISTS welcome_channels (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    guild_id TEXT UNIQUE NOT NULL,
+    channel_id TEXT NOT NULL,
+    enabled BOOLEAN DEFAULT 1,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  );
+`);
+
+console.log('✅ Database initialized');
+
+// ===== DATABASE FUNCTIONS =====
+/**
+ * Get welcome channel for a guild
+ * @param {string} guildId - The guild/server ID
+ * @returns {string|null} The channel ID if enabled, null otherwise
+ */
+function getWelcomeChannel(guildId) {
+  const row = db.prepare('SELECT channel_id FROM welcome_channels WHERE guild_id = ? AND enabled = 1').get(guildId);
+  return row ? row.channel_id : null;
+}
+
+/**
+ * Enable welcome channel for a guild
+ * @param {string} guildId - The guild/server ID
+ * @param {string} channelId - The channel ID to enable
+ */
+function setWelcomeChannel(guildId, channelId) {
+  db.prepare('INSERT OR REPLACE INTO welcome_channels (guild_id, channel_id, enabled) VALUES (?, ?, 1)')
+    .run(guildId, channelId);
+}
+
+/**
+ * Disable welcome channel for a guild
+ * @param {string} guildId - The guild/server ID
+ */
+function disableWelcomeChannel(guildId) {
+  db.prepare('UPDATE welcome_channels SET enabled = 0 WHERE guild_id = ?').run(guildId);
+}
 
 /**
  * Load template JSON file from templates folder
@@ -121,14 +164,18 @@ client.on('messageCreate', async (message) => {
     const channelId = message.channel.id;
 
     // Check if welcome is already enabled in this channel
-    if (welcomeChannels[guildId] === channelId) {
+    const currentWelcomeChannel = getWelcomeChannel(guildId);
+    
+    if (currentWelcomeChannel === channelId) {
       // DISABLE welcome channel
-      delete welcomeChannels[guildId];
+      disableWelcomeChannel(guildId);
       await message.channel.send('✅ Welcome messages **disabled** for this channel.');
+      console.log(`⚠️ Welcome channel disabled for guild ${guildId}`);
     } else {
       // ENABLE welcome channel
-      welcomeChannels[guildId] = channelId;
+      setWelcomeChannel(guildId, channelId);
       await message.channel.send('🎉 Welcome messages **enabled** for this channel!\n\nNew members will be welcomed here with a nice message.');
+      console.log(`✅ Welcome channel enabled for guild ${guildId} in channel ${channelId}`);
     }
   }
 
@@ -367,7 +414,9 @@ client.on('messageCreate', async (message) => {
  */
 client.on('guildMemberAdd', async (member) => {
   const guildId = member.guild.id;
-  const channelId = welcomeChannels[guildId];
+  
+  // Get welcome channel from database
+  const channelId = getWelcomeChannel(guildId);
 
   // Only send welcome if enabled for this server
   if (!channelId) return;
