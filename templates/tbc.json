@@ -1,0 +1,113 @@
+{
+  "categories": [
+    {
+      "id": "info",
+      "name": "ℹ️ Info",
+      "channels": [
+        {
+          "name": "bot-invite",
+          "type": "text",
+          "topic": "Get the Template Bot invite link",
+          "initialMessage": "🤖 **Add Template Bot to Your Server!**\n\nUse the `!invite` command in any server to get the bot invite link!\n\nOr ask the bot admins for an invite link.\n\n**Template Bot Features:**\n• 🎯 `!setup` — Create server structure from templates\n• 💬 `.say` — Send anonymous messages (admin only)\n• 📋 `!help` — View all commands\n• 🔗 `!invite` — Get bot invite link\n\nThe bot requires Administrator permission to function properly."
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "name": "💬 General",
+      "channels": [
+        {
+          "name": "welcome",
+          "type": "text",
+          "topic": "Welcome to Template Bot Community",
+          "initialMessage": "🎉 **Welcome!**\n\nThis is the official community for Template Bot users.\n\n• Get support\n• Share templates\n• Suggest features\n• Connect with admins"
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "topic": "Bot updates and news",
+          "initialMessage": "📢 **Announcements**\n\nStay updated on new features and updates!"
+        },
+        {
+          "name": "general",
+          "type": "text",
+          "topic": "General discussion",
+          "initialMessage": "💬 **General Chat**\n\nFeel free to discuss anything here!"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "name": "🆘 Support",
+      "channels": [
+        {
+          "name": "help",
+          "type": "text",
+          "topic": "Get help with Template Bot",
+          "initialMessage": "🆘 **Need Help?**\n\nAsk your questions here and we'll help you out!"
+        },
+        {
+          "name": "bug-reports",
+          "type": "text",
+          "topic": "Report bugs and issues",
+          "initialMessage": "🐛 **Report Bugs**\n\nFound a bug? Let us know!"
+        },
+        {
+          "name": "feature-requests",
+          "type": "text",
+          "topic": "Suggest new features",
+          "initialMessage": "💡 **Feature Requests**\n\nHave an idea? Share it with us!"
+        }
+      ]
+    },
+    {
+      "id": "showcase",
+      "name": "🎨 Showcase",
+      "channels": [
+        {
+          "name": "templates",
+          "type": "text",
+          "topic": "Share custom templates",
+          "initialMessage": "📦 **Template Showcase**\n\nShare your custom templates here!"
+        },
+        {
+          "name": "servers",
+          "type": "text",
+          "topic": "Show off your servers",
+          "initialMessage": "🖼️ **Community Servers**\n\nShow us your server setups!"
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "name": "🎙️ Voice",
+      "channels": [
+        {
+          "name": "General Voice",
+          "type": "voice"
+        },
+        {
+          "name": "Support",
+          "type": "voice"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "Admin",
+      "color": "#FF0000",
+      "permissions": ["administrator"]
+    },
+    {
+      "name": "Moderator",
+      "color": "#0099FF",
+      "permissions": ["moderateMembers", "manageMessages"]
+    },
+    {
+      "name": "Member",
+      "color": "#808080",
+      "permissions": []
+    }
+  ]
+}
