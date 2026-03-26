@@ -9,7 +9,7 @@
 
   ---
 
-  [![Discord Invite](https://img.shields.io/badge/Discord-Invite_ServerManager-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID_HERE&permissions=8&scope=bot)
+  [![Discord Invite](https://img.shields.io/badge/Discord-Invite_ServerManager-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/api/oauth2/authorize?client_id=1486709634982088744&permissions=8&scope=bot)
 
   ---
 </div>
@@ -30,7 +30,7 @@
 
 Click the Discord invite button above to add ServerManager to your server with full permissions!
 
-> **Note:** Replace `YOUR_CLIENT_ID_HERE` in the button link with your actual bot Client ID from the [Discord Developer Portal](https://discord.com/developers/applications)
+ServerManager will automatically request Administrator access to manage your server structure.
 
 ---
 
