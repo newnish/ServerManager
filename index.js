@@ -246,14 +246,34 @@ client.on('messageCreate', async (message) => {
       if (template.roles && template.roles.length > 0) {
         for (const roleData of template.roles) {
           try {
+            // Convert permission strings to PermissionsBitField
+            let permissions = [];
+            if (roleData.permissions && roleData.permissions.length > 0) {
+              permissions = roleData.permissions.map(perm => {
+                // Map permission names to PermissionsBitField flags
+                const permissionMap = {
+                  'administrator': PermissionsBitField.Flags.Administrator,
+                  'moderateMembers': PermissionsBitField.Flags.ModerateMembers,
+                  'manageMessages': PermissionsBitField.Flags.ManageMessages,
+                  'manageChannels': PermissionsBitField.Flags.ManageChannels,
+                  'manageRoles': PermissionsBitField.Flags.ManageRoles,
+                  'manageGuild': PermissionsBitField.Flags.ManageGuild,
+                  'kickMembers': PermissionsBitField.Flags.KickMembers,
+                  'banMembers': PermissionsBitField.Flags.BanMembers,
+                };
+                return permissionMap[perm] || null;
+              }).filter(p => p !== null);
+            }
+
             // Create role with specified color and permissions
             const role = await guild.roles.create({
               name: roleData.name,
               color: roleData.color,
-              permissions: roleData.permissions || [],
+              permissions: permissions,
               reason: 'Template Bot - Role creation',
             });
             roleMap[roleData.name] = role;
+            console.log(`✅ Created role: ${roleData.name}`);
           } catch (err) {
             console.error(`Failed to create role ${roleData.name}: ${err.message}`);
           }
