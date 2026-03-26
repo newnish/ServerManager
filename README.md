@@ -1,9 +1,9 @@
-# Template Bot 🎯
+# ServerManager 🎯
 
 <div align="center">
-  <img src="LOGO.svg" width="200" height="200" alt="Template Bot Logo">
+  <img src="LOGO.svg" width="200" height="200" alt="ServerManager Logo">
   
-  **A Discord bot that creates server structures from JSON templates.**
+  **A Discord bot that handles your server for you.**
   
   Perfect for quickly setting up organized communities with channels, categories, roles, and welcome messages.
 </div>
@@ -24,7 +24,7 @@
 
 - Node.js v16 or higher
 - npm or yarn
-- A Discord bot token from [Discord Developer Portal](https://discord.com/developers/applications)
+- A Discord ServerManager bot token from [Discord Developer Portal](https://discord.com/developers/applications)
 
 ### Installation
 
@@ -382,4 +382,6 @@ Have a great template idea? Submit a PR or open an issue!
 
 ---
 
-**Made with ❤️ by Evilman34**
+**ServerManager - Handle Your Server Automatically**
+
+Made with ❤️ by Evilman34
