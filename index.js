@@ -72,11 +72,11 @@ client.on('messageCreate', async (message) => {
   }
 
   if (message.content === '!invite') {
+    const { PermissionsBitField } = require('discord.js');
+    
     const inviteUrl = client.generateInvite({
       scopes: ['bot'],
-      permissions: [
-        'Administrator',
-      ],
+      permissions: [PermissionsBitField.Flags.Administrator],
     });
 
     const embed = {
@@ -85,11 +85,19 @@ client.on('messageCreate', async (message) => {
       description: 'Click the link below to invite this bot to your server:',
       fields: [
         {
+          name: 'Permissions',
+          value: '🔓 Administrator',
+          inline: false,
+        },
+        {
           name: 'Invite URL',
           value: `[Click here to invite](${inviteUrl})`,
           inline: false,
         },
       ],
+      footer: {
+        text: 'This bot requires Administrator permission to function properly',
+      },
     };
 
     await message.channel.send({ embeds: [embed] });
@@ -123,6 +131,11 @@ client.on('messageCreate', async (message) => {
   if (message.content.startsWith('!setup')) {
     const guild = message.guild;
     if (!guild) return;
+
+    // Check if user is admin
+    if (!message.member.permissions.has('Administrator')) {
+      return await message.channel.send('❌ Only server admins can use this command!');
+    }
 
     try {
       // Parse template name from command
@@ -184,10 +197,14 @@ client.on('messageCreate', async (message) => {
         ],
       };
 
-      await message.channel.send({ embeds: [embed] });
+      if (message.channel) {
+        await message.channel.send({ embeds: [embed] });
+      }
     } catch (error) {
       console.error(error);
-      await message.channel.send(`❌ Error: ${error.message}`);
+      if (message.channel) {
+        await message.channel.send(`❌ Error: ${error.message}`);
+      }
     }
   }
 });
