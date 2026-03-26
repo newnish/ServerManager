@@ -80,9 +80,9 @@ Sets up server with the default template
 
 ### Custom Template with Custom Name
 ```
-!setup rimel.json --name "Trading Community"
+!setup default.json --name "Trading Community"
 ```
-Uses the rimel template and names the server "Trading Community"
+Uses a template and names the server "Trading Community"
 
 ### Send Anonymous Message
 ```
@@ -110,11 +110,7 @@ Dedicated community for Template Bot users with showcase and support channels.
 !setup template.json --name "Template Bot Community"
 ```
 
-### 3. **rimel.json** (Trading/Mod Community)
-Complete template for trading communities with marketplace, mods, and support sections.
-```bash
-!setup rimel.json --name "Trading Server"
-```
+
 
 ## Creating Your Own Template
 
