@@ -7,8 +7,8 @@
         {
           "name": "bot-invite",
           "type": "text",
-          "topic": "Get the Template Bot invite link",
-          "initialMessage": "🤖 **Add Template Bot to Your Server!**\n\nUse the `!invite` command in any server to get the bot invite link!\n\nOr ask the bot admins for an invite link.\n\n**Template Bot Features:**\n• 🎯 `!setup` — Create server structure from templates\n• 💬 `.say` — Send anonymous messages (admin only)\n• 📋 `!help` — View all commands\n• 🔗 `!invite` — Get bot invite link\n\nThe bot requires Administrator permission to function properly."
+          "topic": "Get the bot invite link",
+          "initialMessage": "🤖 **Add Template Bot to Your Server!**\n\nUse the `!invite` command in any server to get the bot invite link!\n\n**Template Bot Features:**\n• 🎯 `!setup` — Create server structure from templates\n• 💬 `.say` — Send anonymous messages (admin only)\n• 📋 `!help` — View all commands\n• 🔗 `!invite` — Get bot invite link\n• 🎉 `!welcomechannel` — Enable welcome messages\n\nThe bot requires Administrator permission to function properly."
         }
       ]
     },
@@ -19,13 +19,13 @@
         {
           "name": "welcome",
           "type": "text",
-          "topic": "Welcome to Template Bot Community",
-          "initialMessage": "🎉 **Welcome!**\n\nThis is the official community for Template Bot users.\n\n• Get support\n• Share templates\n• Suggest features\n• Connect with admins"
+          "topic": "Welcome to our community",
+          "initialMessage": "🎉 **Welcome!**\n\nGlad to have you here!\n\n• Get support\n• Share templates\n• Suggest features\n• Connect with the community"
         },
         {
           "name": "announcements",
           "type": "text",
-          "topic": "Bot updates and news",
+          "topic": "Important announcements",
           "initialMessage": "📢 **Announcements**\n\nStay updated on new features and updates!"
         },
         {
@@ -33,30 +33,6 @@
           "type": "text",
           "topic": "General discussion",
           "initialMessage": "💬 **General Chat**\n\nFeel free to discuss anything here!"
-        }
-      ]
-    },
-    {
-      "id": "support",
-      "name": "🆘 Support",
-      "channels": [
-        {
-          "name": "help",
-          "type": "text",
-          "topic": "Get help with Template Bot",
-          "initialMessage": "🆘 **Need Help?**\n\nAsk your questions here and we'll help you out!"
-        },
-        {
-          "name": "bug-reports",
-          "type": "text",
-          "topic": "Report bugs and issues",
-          "initialMessage": "🐛 **Report Bugs**\n\nFound a bug? Let us know!"
-        },
-        {
-          "name": "feature-requests",
-          "type": "text",
-          "topic": "Suggest new features",
-          "initialMessage": "💡 **Feature Requests**\n\nHave an idea? Share it with us!"
         }
       ]
     },
@@ -73,8 +49,32 @@
         {
           "name": "servers",
           "type": "text",
-          "topic": "Show off your servers",
+          "topic": "Show off your server setups",
           "initialMessage": "🖼️ **Community Servers**\n\nShow us your server setups!"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "name": "🆘 Support",
+      "channels": [
+        {
+          "name": "help",
+          "type": "text",
+          "topic": "Get help with the bot",
+          "initialMessage": "🆘 **Need Help?**\n\nAsk your questions here!"
+        },
+        {
+          "name": "bug-reports",
+          "type": "text",
+          "topic": "Report bugs and issues",
+          "initialMessage": "🐛 **Bug Reports**\n\nFound a bug? Let us know!"
+        },
+        {
+          "name": "feature-requests",
+          "type": "text",
+          "topic": "Suggest new features",
+          "initialMessage": "💡 **Feature Requests**\n\nHave an idea? Share it with us!"
         }
       ]
     },
@@ -83,7 +83,7 @@
       "name": "🎙️ Voice",
       "channels": [
         {
-          "name": "General Voice",
+          "name": "General",
           "type": "voice"
         },
         {
@@ -103,6 +103,11 @@
       "name": "Moderator",
       "color": "#0099FF",
       "permissions": ["moderateMembers", "manageMessages"]
+    },
+    {
+      "name": "Developer",
+      "color": "#9C27B0",
+      "permissions": []
     },
     {
       "name": "Member",

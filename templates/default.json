@@ -7,56 +7,44 @@
         {
           "name": "welcome",
           "type": "text",
-          "topic": "Welcome to our coding community! 🚀",
-          "initialMessage": "🎉 **Welcome to the Coding Community!**\n\nThis is a space for developers of all skill levels to:\n• Learn new technologies\n• Share projects and ideas\n• Collaborate on code\n• Help each other grow\n\nFeel free to introduce yourself in #introductions and jump into the conversation!"
+          "topic": "Welcome to our community",
+          "initialMessage": "🎉 **Welcome!**\n\nGlad to have you here!\n\n• Get support\n• Share ideas\n• Suggest features\n• Connect with the community"
         },
         {
           "name": "announcements",
           "type": "text",
-          "topic": "Important updates and announcements",
-          "initialMessage": "📢 **Announcements Channel**\n\nThis channel is for important server updates, event announcements, and community news. Make sure to enable notifications for this channel!"
+          "topic": "Important announcements and updates",
+          "initialMessage": "📢 **Announcements**\n\nStay updated on important news and updates!\n\nEnable notifications to never miss an announcement."
         },
         {
           "name": "general",
           "type": "text",
-          "topic": "General discussion and off-topic chat",
-          "initialMessage": "💬 **General Chat**\n\nFeel free to discuss anything here! Share memes, ask questions, and connect with other community members. Just keep it respectful! 😊"
+          "topic": "General discussion and chat",
+          "initialMessage": "💬 **General Chat**\n\nFeel free to chat about anything here!"
         },
         {
           "name": "introductions",
           "type": "text",
-          "topic": "Introduce yourself to the community!",
-          "initialMessage": "👋 **Introductions**\n\nTell us about yourself! Share:\n• Your name and experience level\n• Programming languages you know\n• What you're interested in learning\n• Fun facts about yourself!\n\nWelcome aboard! 🚀"
+          "topic": "Introduce yourself",
+          "initialMessage": "👋 **Introductions**\n\nTell us about yourself! Share your interests and what brings you here."
         }
       ]
     },
     {
-      "id": "programming",
-      "name": "👨‍💻 Programming",
+      "id": "support",
+      "name": "🆘 Support",
       "channels": [
         {
-          "name": "javascript",
+          "name": "help",
           "type": "text",
-          "topic": "JavaScript, Node.js, and web dev",
-          "initialMessage": "🟨 **JavaScript Channel**\n\nDiscuss JavaScript, Node.js, Express, and web development frameworks. Share your projects, ask questions, and learn from others!\n\nPopular Topics:\n• Frontend: React, Vue, Svelte\n• Backend: Node.js, Express\n• Tools: Webpack, Babel, ESLint"
+          "topic": "Get help and support",
+          "initialMessage": "🆘 **Need Help?**\n\nAsk questions and get support from the community.\nOur team is here to assist!"
         },
         {
-          "name": "python",
+          "name": "suggestions",
           "type": "text",
-          "topic": "Python and data science",
-          "initialMessage": "🐍 **Python Channel**\n\nEverything Python! From web development to data science.\n\nTopics:\n• Django & Flask\n• Data Science: NumPy, Pandas, Scikit-learn\n• Machine Learning & AI\n• Automation & Scripting"
-        },
-        {
-          "name": "web-development",
-          "type": "text",
-          "topic": "React, Vue, Angular, and frontend frameworks",
-          "initialMessage": "🎨 **Web Development Channel**\n\nFrontend frameworks and modern web development.\n\nCovered:\n• React, Vue, Angular, Svelte\n• CSS & Styling\n• Responsive Design\n• Web Performance"
-        },
-        {
-          "name": "projects",
-          "type": "text",
-          "topic": "Share and collaborate on projects",
-          "initialMessage": "🚀 **Projects Channel**\n\nShowcase your projects, find collaborators, and discuss ideas!\n\nFeel free to share:\n• GitHub repos\n• Project ideas\n• Looking for teammates\n• Code reviews & feedback"
+          "topic": "Suggest improvements and ideas",
+          "initialMessage": "💡 **Suggestions**\n\nHave an idea? We'd love to hear it!"
         }
       ]
     },
@@ -65,34 +53,12 @@
       "name": "🎙️ Voice",
       "channels": [
         {
-          "name": "General Voice",
+          "name": "General",
           "type": "voice"
         },
         {
-          "name": "Study Session",
+          "name": "Support",
           "type": "voice"
-        },
-        {
-          "name": "Code Review",
-          "type": "voice"
-        }
-      ]
-    },
-    {
-      "id": "resources",
-      "name": "📚 Resources",
-      "channels": [
-        {
-          "name": "resources",
-          "type": "text",
-          "topic": "Tutorials, documentation, and learning materials",
-          "initialMessage": "📚 **Learning Resources**\n\nCurated learning materials and documentation:\n\n**Recommended Sites:**\n• MDN Web Docs: https://developer.mozilla.org\n• Python Docs: https://docs.python.org\n• Dev.to: https://dev.to\n• FreeCodeCamp: https://freecodecamp.org\n\nShare helpful resources here! 📖"
-        },
-        {
-          "name": "events",
-          "type": "text",
-          "topic": "Meetups, hackathons, and community events",
-          "initialMessage": "🎯 **Community Events**\n\nJoin us for:\n• Weekly coding sessions\n• Monthly hackathons\n• Expert talks & workshops\n• Pair programming sessions\n\nStay tuned for upcoming announcements! 📅"
         }
       ]
     }
@@ -106,16 +72,11 @@
     {
       "name": "Moderator",
       "color": "#0099FF",
-      "permissions": ["moderateMembers", "manageTnMessages"]
+      "permissions": ["moderateMembers", "manageMessages"]
     },
     {
-      "name": "Developer",
-      "color": "#00FF00",
-      "permissions": []
-    },
-    {
-      "name": "Contributor",
-      "color": "#FFFF00",
+      "name": "Member",
+      "color": "#808080",
       "permissions": []
     }
   ]
