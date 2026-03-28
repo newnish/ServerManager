@@ -399,6 +399,16 @@ The bot requires the following permissions to function properly:
 - Verify bot has Manage Roles permission
 - Check role names are valid (max 100 characters)
 
+## Discord Bot Directories
+
+**List ServerManager on popular Discord bot directories:**
+
+- **[top.gg](https://top.gg/)** - The largest Discord bot listing
+- **[discord.bots](https://discord.bots.gg/)** - Community-driven bot directory
+- **[discordbotlist](https://discordbotlist.com/)** - Another popular bot listing site
+
+These directories help users discover ServerManager and grow your bot's community!
+
 ## Support
 
 Need help? Check the `!help` command in Discord or open an issue on GitHub.
