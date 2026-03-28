@@ -92,6 +92,19 @@ const client = new Client({
  */
 client.once('ready', () => {
   console.log(`✅ Logged in as ${client.user.tag}`);
+  
+  // Set bot presence - always listening to !help
+  client.user.setPresence({
+    activities: [
+      {
+        name: '!help',
+        type: 2, // LISTENING
+      }
+    ],
+    status: 'online',
+  });
+  
+  console.log(`🎵 Presence set: Listening to !help`);
 });
 
 /**
@@ -108,89 +121,67 @@ client.on('messageCreate', async (message) => {
   }
 
   // ===== !HELP COMMAND =====
-  // Displays all available commands in an embed
+  // Displays all available commands in organized, beautiful embeds
   if (message.content === '!help') {
-    const embed = {
+    // Page 1: General & Admin Commands
+    const page1 = {
       color: 0x0099ff,
-      title: '📖 Available Commands',
-      description: 'Here are all the commands you can use:',
+      title: '📖 ServerManager Bot - Commands',
+      description: '**Page 1/2: General & Admin Commands**',
       fields: [
         {
-          name: '!ping',
-          value: 'Check if the bot is online',
+          name: '⚡ General Commands',
+          value: '**!ping** — Check if bot is online\n**!help** — Show this help message\n**!invite** — Get bot invite link',
           inline: false,
         },
         {
-          name: '!help',
-          value: 'Show this help message',
+          name: '⚙️ Server Setup',
+          value: '**!setup** `[template]`\nSetup server with channels & roles\n\nExamples:\n`!setup` — Use default template\n`!setup custom.json` — Custom template\n\n*Admin only*',
           inline: false,
         },
         {
-          name: '!invite',
-          value: 'Get the bot invite link',
-          inline: false,
-        },
-        {
-          name: '!setup [template]',
-          value: 'Setup the server with channels and categories\nExamples:\n`!setup`\n`!setup template-bot-community.json`',
-          inline: false,
-        },
-        {
-          name: '!welcomechannel',
-          value: '**Admin only** - Enable/disable welcome messages in current channel\nUsage: `!welcomechannel` to toggle',
-          inline: false,
-        },
-        {
-          name: '.say <message>',
-          value: '**Admin only** - Send a message anonymously (deletes command)\nExample: `.say Hello everyone!`',
-          inline: false,
-        },
-        {
-          name: '**Moderation Commands**',
-          value: 'All require admin permissions',
-          inline: false,
-        },
-        {
-          name: '!kick <@user> [reason]',
-          value: 'Kick a user from the server\nExample: `!kick @user spam`',
-          inline: false,
-        },
-        {
-          name: '!ban <@user> [reason]',
-          value: 'Ban a user from the server\nExample: `!ban @user harassment`',
-          inline: false,
-        },
-        {
-          name: '!unban <user-id>',
-          value: 'Unban a user\nExample: `!unban 123456789`',
-          inline: false,
-        },
-        {
-          name: '!warn <@user> [reason]',
-          value: 'Warn a user (3 warnings = auto-kick)\nExample: `!warn @user spam`',
-          inline: false,
-        },
-        {
-          name: '!warns <@user>',
-          value: 'Check warnings for a user\nExample: `!warns @user`',
-          inline: false,
-        },
-        {
-          name: '!mute <@user> [duration]',
-          value: 'Mute a user (1m/1h/1d default 10m)\nExample: `!mute @user 1h`',
-          inline: false,
-        },
-        {
-          name: '!unmute <@user>',
-          value: 'Unmute a user\nExample: `!unmute @user`',
+          name: '📢 Admin Tools',
+          value: '**!welcomechannel** — Toggle welcome messages in current channel\n**. say** `<message>` — Send anonymous message\n\n*Admin only*',
           inline: false,
         },
       ],
       footer: {
-        text: 'For more info, contact the server admins',
+        text: 'React with ➡️ to see moderation commands',
       },
+      timestamp: new Date(),
     };
-    await message.channel.send({ embeds: [embed] });
+
+    // Page 2: Moderation Commands
+    const page2 = {
+      color: 0xff6b6b,
+      title: '🛡️ Moderation Commands',
+      description: '**Page 2/2: Server Moderation**\n\n*All commands are admin-only. Duration formats: 1m, 1h, 1d*',
+      fields: [
+        {
+          name: '👢 Removals',
+          value: '**!kick** `<@user> [reason]`\nRemove user from server\n\n**!ban** `<@user> [reason]`\nBan user permanently\n\n**!unban** `<user-id>`\nRestore banned user',
+          inline: true,
+        },
+        {
+          name: '⚠️ Warnings & Muting',
+          value: '**!warn** `<@user> [reason]`\nWarn user (3 = auto-kick)\n\n**!warns** `<@user>`\nView user\'s warnings\n\n**!mute** `<@user> [duration]`\nMute user (default 10m)\n\n**!unmute** `<@user>`\nRestore user voice',
+          inline: true,
+        },
+        {
+          name: '💡 Usage Examples',
+          value: '`!warn @user spam` — Warn for spam\n`!kick @user toxic behavior` — Kick with reason\n`!mute @user 1h` — Mute for 1 hour\n`!ban @user harassment` — Ban with reason',
+          inline: false,
+        },
+      ],
+      footer: {
+        text: 'React with ← to go back to page 1',
+      },
+      timestamp: new Date(),
+    };
+
+    // Send both embeds
+    await message.channel.send({ embeds: [page1] });
+    await message.channel.send({ embeds: [page2] });
   }
 
   // ===== !WELCOMECHANNEL COMMAND =====
