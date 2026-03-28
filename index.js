@@ -6,6 +6,7 @@ const { Client, GatewayIntentBits, ChannelType, PermissionsBitField } = require(
 const fs = require('fs');
 const path = require('path');
 const Database = require('better-sqlite3');
+const handleModerationCommands = require('./moderation-commands');
 
 // ===== DATABASE SETUP =====
 // Initialize SQLite database for persistent settings
@@ -142,6 +143,46 @@ client.on('messageCreate', async (message) => {
         {
           name: '.say <message>',
           value: '**Admin only** - Send a message anonymously (deletes command)\nExample: `.say Hello everyone!`',
+          inline: false,
+        },
+        {
+          name: '**Moderation Commands**',
+          value: 'All require admin permissions',
+          inline: false,
+        },
+        {
+          name: '!kick <@user> [reason]',
+          value: 'Kick a user from the server\nExample: `!kick @user spam`',
+          inline: false,
+        },
+        {
+          name: '!ban <@user> [reason]',
+          value: 'Ban a user from the server\nExample: `!ban @user harassment`',
+          inline: false,
+        },
+        {
+          name: '!unban <user-id>',
+          value: 'Unban a user\nExample: `!unban 123456789`',
+          inline: false,
+        },
+        {
+          name: '!warn <@user> [reason]',
+          value: 'Warn a user (3 warnings = auto-kick)\nExample: `!warn @user spam`',
+          inline: false,
+        },
+        {
+          name: '!warns <@user>',
+          value: 'Check warnings for a user\nExample: `!warns @user`',
+          inline: false,
+        },
+        {
+          name: '!mute <@user> [duration]',
+          value: 'Mute a user (1m/1h/1d default 10m)\nExample: `!mute @user 1h`',
+          inline: false,
+        },
+        {
+          name: '!unmute <@user>',
+          value: 'Unmute a user\nExample: `!unmute @user`',
           inline: false,
         },
       ],
@@ -370,6 +411,10 @@ client.on('messageCreate', async (message) => {
       await message.channel.send('❌ Error sending message!');
     }
   }
+
+  // ===== MODERATION COMMANDS =====
+  // Handle all moderation commands (!kick, !ban, !warn, !mute, etc.)
+  handleModerationCommands(client, message);
 });
 
 /**

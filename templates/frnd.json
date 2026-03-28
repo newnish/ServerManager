@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "name": "Friends Group",
+    "description": "Casual gaming crew with hangout spaces, voice channels, and clips sharing."
+  },
   "categories": [
     {
       "id": "gaming-zone",

@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "name": "Smart Setup",
+    "description": "Interactive setup guide template with vibe selection buttons."
+  },
   "categories": [
     {
       "id": "setup",

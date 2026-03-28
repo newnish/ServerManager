@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "name": "Community Hub",
+    "description": "Full-featured server template with support, announcements, and community showcase."
+  },
   "categories": [
     {
       "id": "info",

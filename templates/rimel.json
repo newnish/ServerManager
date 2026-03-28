@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "name": "Rimel",
+    "description": "A vibrant gaming & community server with voice channels, games, and event organizing."
+  },
   "categories": [
     {
       "id": "important",

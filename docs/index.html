@@ -485,14 +485,14 @@
                 <p>Send anonymous messages with the .say command (admin only).</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">💾</div>
-                <h3>Persistent Storage</h3>
-                <p>Settings saved to database. Welcome channels persist across restarts.</p>
+                <div class="feature-icon">⚔️</div>
+                <h3>Server Moderation</h3>
+                <p>Kick, ban, mute, and warn users. Auto-kick after 3 warnings.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🔧</div>
-                <h3>Easy to Use</h3>
-                <p>Simple commands. No complex setup. Just !setup and you're done.</p>
+                <div class="feature-icon">💾</div>
+                <h3>Persistent Storage</h3>
+                <p>Settings saved to database. Welcome channels and moderation logs persist.</p>
             </div>
         </div>
     </section>
@@ -524,6 +524,34 @@
             <div class="command-card">
                 <div class="command-name">!ping</div>
                 <div class="command-desc">Check if the bot is online and responsive.</div>
+            </div>
+            <div class="command-card">
+                <div class="command-name">!kick &lt;@user&gt; [reason]</div>
+                <div class="command-desc">Kick a user from the server. Admin only.</div>
+            </div>
+            <div class="command-card">
+                <div class="command-name">!ban &lt;@user&gt; [reason]</div>
+                <div class="command-desc">Ban a user from the server. Admin only.</div>
+            </div>
+            <div class="command-card">
+                <div class="command-name">!unban &lt;user-id&gt;</div>
+                <div class="command-desc">Unban a user. Admin only.</div>
+            </div>
+            <div class="command-card">
+                <div class="command-name">!warn &lt;@user&gt; [reason]</div>
+                <div class="command-desc">Warn a user (3 warnings = auto-kick). Admin only.</div>
+            </div>
+            <div class="command-card">
+                <div class="command-name">!warns &lt;@user&gt;</div>
+                <div class="command-desc">Check warnings for a user. Admin only.</div>
+            </div>
+            <div class="command-card">
+                <div class="command-name">!mute &lt;@user&gt; [duration]</div>
+                <div class="command-desc">Mute a user (1m/1h/1d, default 10m). Admin only.</div>
+            </div>
+            <div class="command-card">
+                <div class="command-name">!unmute &lt;@user&gt;</div>
+                <div class="command-desc">Unmute a user. Admin only.</div>
             </div>
         </div>
     </section>

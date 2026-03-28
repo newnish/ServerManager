@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "name": "Default Setup Wizard",
+    "description": "A minimal setup guide template with options for other community templates."
+  },
   "categories": [
     {
       "id": "system",

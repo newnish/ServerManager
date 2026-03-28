@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "name": "Programming Club",
+    "description": "Professional tech community with development channels, career board, and collaboration spaces."
+  },
   "categories": [
     {
       "id": "reception",

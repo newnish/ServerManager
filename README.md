@@ -24,6 +24,8 @@
 - 📋 **`!help`** — View all commands
 - 🎭 **Dynamic Server Names** — Customize with `--name` flag
 - 🔧 **Custom Templates** — Create your own server templates
+- ⚔️ **Server Moderation** — Kick, ban, mute, warn members
+- 📊 **Warning System** — Auto-kick users after 3 warnings
 
 ## Quick Start
 
@@ -92,6 +94,18 @@ ServerManager will automatically request Administrator access to manage your ser
 | `!setup [template] [--name "Name"]` | Set up server from template | `!setup rimel.json --name "My Server"` |
 | `.say <message>` | Send anonymous message | `.say Welcome everyone!` |
 | `!welcomechannel` | Toggle welcome messages in current channel | `!welcomechannel` |
+
+### Moderation Commands (Admin Only)
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `!kick <@user> [reason]` | Kick a user from the server | `!kick @user spam` |
+| `!ban <@user> [reason]` | Ban a user from the server | `!ban @user harassment` |
+| `!unban <user-id>` | Unban a user | `!unban 123456789` |
+| `!warn <@user> [reason]` | Warn a user (3 warns = auto-kick) | `!warn @user spam` |
+| `!warns <@user>` | Check warnings for a user | `!warns @user` |
+| `!mute <@user> [duration]` | Mute a user (1m/1h/1d, default 10m) | `!mute @user 1h` |
+| `!unmute <@user>` | Unmute a user | `!unmute @user` |
 
 ## Usage Examples
 
