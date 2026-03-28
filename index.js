@@ -129,22 +129,27 @@ client.on('messageCreate', async (message) => {
     // Main Overview Embed (shown when no category specified)
     const overviewEmbed = {
       color: 0x5865F2, // Discord blurple
-      title: '📚 ServerManager Bot - Command Help',
-      description: 'A powerful Discord bot for server management, setup, and moderation.',
+      title: '📚 ServerManager Bot - Complete Command Reference',
+      description: '**Powerful Discord bot for server management, automation, and moderation.** Pick a category below to dive deeper!',
       fields: [
         {
-          name: '📋 Command Categories',
-          value: '`!help general` — Public commands\n`!help admin` — Server setup & configuration\n`!help moderation` — Moderation & enforcement\n`!help utilities` — Utility commands',
+          name: '✨ What Can I Do?',
+          value: '🎯 **General** — Basic commands everyone can use\n⚙️ **Admin** — Advanced setup and server configuration\n🛡️ **Moderation** — Manage users and enforce rules\n🔧 **Utilities** — Reference guides and syntax help',
           inline: false,
         },
         {
-          name: '💡 Tip',
-          value: 'Type `!help [category]` to see detailed info for each group!',
+          name: '🚀 Quick Start',
+          value: 'View a category: `!help admin`\nBuild a server: `!setup`\nToggle welcome: `!welcomechannel`\nCheck status: `!ping`',
+          inline: false,
+        },
+        {
+          name: '📖 Category Deep-Dive',
+          value: 'Type `!help [category]` to see full details:\n• `!help general` — Public commands\n• `!help admin` — Setup & configuration\n• `!help moderation` — Enforcement tools\n• `!help utilities` — Syntax & reference',
           inline: false,
         },
       ],
       footer: {
-        text: 'ServerManager v1.0',
+        text: 'ServerManager v1.0 • Reply with a category name to learn more',
       },
       timestamp: new Date(),
     };
@@ -156,23 +161,23 @@ client.on('messageCreate', async (message) => {
       description: 'Public commands everyone can use',
       fields: [
         {
-          name: '!ping',
-          value: '🏓 Check if the bot is online and responsive\n**Usage:** `!ping`',
+          name: '⚡ !ping',
+          value: 'Check if the bot is online and responsive.\n**Usage:** `!ping`\n**Response:** Pong! 🏓',
           inline: false,
         },
         {
-          name: '!help [category]',
-          value: '📚 Display help information\n**Usage:** `!help` or `!help moderation`\n**Categories:** general | admin | moderation | utilities',
+          name: '📚 !help [category]',
+          value: 'Display help information with detailed command documentation.\n**Usage:** `!help` (overview) or `!help moderation` (specific category)\n**Available:** `general`, `admin`, `moderation`, `utilities`',
           inline: false,
         },
         {
-          name: '!invite',
-          value: '🔗 Get the bot invite link to add it to another server\n**Usage:** `!invite`',
+          name: '🔗 !invite',
+          value: 'Get the bot invite link to add ServerManager to another server.\n**Usage:** `!invite`\n**Permissions:** Requires Administrator access on target server',
           inline: false,
         },
       ],
       footer: {
-        text: 'Tip: Anyone can use these commands',
+        text: '✨ Anyone can use these commands',
       },
       timestamp: new Date(),
     };
@@ -181,26 +186,26 @@ client.on('messageCreate', async (message) => {
     const adminEmbed = {
       color: 0xFAA61A, // Discord yellow/gold
       title: '⚙️ Admin & Setup Commands',
-      description: '🔒 **Admin Only** — Server configuration & setup',
+      description: '🔒 **Restricted to Administrators** — Server configuration and automated setup',
       fields: [
         {
-          name: '!setup [template]',
-          value: '🛠️ Build your server structure from a template\n**Usage:** `!setup` or `!setup template-name.json`\n**Effect:** Creates categories, channels, roles from template',
+          name: '🛠️ !setup [template]',
+          value: 'Build your entire server structure from a template in one command.\n**Usage:** `!setup` (default) or `!setup my-template.json`\n**Creates:** Categories, channels, roles, permissions\n**Location:** Place templates in `templates/` folder',
           inline: false,
         },
         {
-          name: '!welcomechannel',
-          value: '🎉 Toggle welcome messages in current channel\n**Usage:** `!welcomechannel`\n**Effect:** Enables/disables auto-welcome for new members',
+          name: '🎉 !welcomechannel',
+          value: 'Enable or disable automatic welcome messages for new members in the current channel.\n**Usage:** `!welcomechannel`\n**Toggle:** Enables if disabled, disables if enabled\n**Note:** Each server can only have one welcome channel',
           inline: false,
         },
         {
-          name: '.say [message]',
-          value: '💬 Send an anonymous message (command is hidden)\n**Usage:** `.say Hello everyone!`\n**Note:** Only admins can use, original message is deleted',
+          name: '💬 .say [message]',
+          value: 'Send an anonymous message as the bot (command is hidden).\n**Usage:** `.say Hello everyone!`\n**Effect:** Deletes your command, bot sends message instead\n**Use Case:** Announcements without showing who triggered them',
           inline: false,
         },
       ],
       footer: {
-        text: 'Requires: Administrator permission',
+        text: '🔐 Requires: Administrator permission',
       },
       timestamp: new Date(),
     };
@@ -209,26 +214,26 @@ client.on('messageCreate', async (message) => {
     const moderationEmbed = {
       color: 0xFF6B6B, // Discord red
       title: '🛡️ Moderation Commands',
-      description: '🔒 **Admin Only** — Enforce server rules & manage users',
+      description: '🔒 **Restricted to Administrators** — Enforce server rules and manage disruptive users',
       fields: [
         {
           name: '👢 Member Removal',
-          value: '**!kick** @user [reason]\n Remove user from server (they can rejoin)\n\n**!ban** @user [reason]\n Permanently ban user from server\n\n**!unban** [user-id]\n Unban a previously banned user',
+          value: '**!kick** @user [reason]\nRemove user temporarily (they can rejoin)\n`Example: !kick @Troll Spam`\n\n**!ban** @user [reason]\nPermanently ban user from server\n`Example: !ban @Hacker Unauthorized access`\n\n**!unban** [user-id]\nRestore access for previously banned user\n`Example: !unban 123456789`',
           inline: false,
         },
         {
           name: '⚠️ Warning System',
-          value: '**!warn** @user [reason]\n Issue a warning (auto-kick at 3 warnings)\n\n**!warns** @user\n View all warnings for a user',
+          value: '**!warn** @user [reason]\nIssue a formal warning (auto-kick at 3 warnings)\n`Example: !warn @User1 Spamming`\n\n**!warns** @user\nView all warnings for a specific user\n`Example: !warns @User1`\n**Tracking:** Warnings persist until manually cleared',
           inline: false,
         },
         {
           name: '🔇 Muting',
-          value: '**!mute** @user [duration]\n Temporarily mute a user (default: 10m)\n\n**!unmute** @user\n Remove mute from user',
+          value: '**!mute** @user [duration]\nTemporarily mute a user (default: 10 minutes)\n`Example: !mute @Spammer 1h`\n\n**!unmute** @user\nRemove mute from user (restore chat access)\n`Example: !unmute @Spammer`\n**Durations:** `30m`, `1h`, `1d`, `2h30m`',
           inline: false,
         },
       ],
       footer: {
-        text: 'Requires: Administrator permission',
+        text: '🔐 Requires: Administrator permission',
       },
       timestamp: new Date(),
     };
@@ -236,61 +241,42 @@ client.on('messageCreate', async (message) => {
     // UTILITIES/OTHER
     const utilitiesEmbed = {
       color: 0x7289DA, // Discord light blue
-      title: '🔧 Utilities & Info',
-      description: 'Helpful commands and information',
+      title: '🔧 Utilities & Reference',
+      description: 'Quick reference guide for command syntax and options',
       fields: [
         {
-          name: 'Command Syntax',
-          value: '**@user** = mention a user (e.g., @John)\n**[reason]** = optional explanation\n**[duration]** = time duration (e.g., 1h, 30m, 1d)',
+          name: '📝 Command Syntax Guide',
+          value: '`@user` = Mention someone (e.g., `@John` or `@Admin`)\n`[reason]` = Optional explanation in brackets\n`[duration]` = Time span for temporary actions\n`user-id` = Numeric Discord user ID (from context menu)',
           inline: false,
         },
         {
-          name: 'Duration Examples',
-          value: '`30m` = 30 minutes\n`1h` = 1 hour\n`1d` = 1 day\n`2h30m` = 2 hours 30 minutes',
+          name: '⏱️ Duration Format',
+          value: '`30m` = 30 minutes\n`1h` = 1 hour\n`2h` = 2 hours\n`1d` = 1 day\n`2h30m` = 2 hours and 30 minutes\n\n**Works with:** Mute durations',
+          inline: false,
+        },
+        {
+          name: '💡 Pro Tips',
+          value: '• Use `!help` to see all categories\n• Always provide reasons for moderation (creates audit trail)\n• Mute commands reset when user leaves and rejoins\n• Warnings are permanent until manually reviewed',
           inline: false,
         },
       ],
       footer: {
-        text: 'Need more help? Ask a server admin!',
+        text: '❓ Still need help? Ask a server admin!',
       },
       timestamp: new Date(),
     };
 
-    // Route to appropriate category or show overview
-    if (!category) {
-      // Show overview if no category specified
-      return await message.channel.send({ embeds: [overviewEmbed] });
-    }
+    // Send all help in ONE reply
+    // Consolidate all categories into a single message with all embeds
+    const allEmbeds = [
+      overviewEmbed,
+      generalEmbed,
+      adminEmbed,
+      moderationEmbed,
+      utilitiesEmbed
+    ];
 
-    if (category === 'general') {
-      return await message.channel.send({ embeds: [generalEmbed] });
-    } else if (category === 'admin') {
-      return await message.channel.send({ embeds: [adminEmbed] });
-    } else if (category === 'moderation') {
-      return await message.channel.send({ embeds: [moderationEmbed] });
-    } else if (category === 'utilities' || category === 'utility') {
-      return await message.channel.send({ embeds: [utilitiesEmbed] });
-    } else {
-      // Unknown category - show overview with error
-      const errorEmbed = {
-        color: 0xFF0000,
-        title: '❌ Unknown Category',
-        description: `"${category}" is not a valid category.`,
-        fields: [
-          {
-            name: 'Available Categories',
-            value: '`general` | `admin` | `moderation` | `utilities`',
-            inline: false,
-          },
-          {
-            name: 'Try:',
-            value: '`!help general` or `!help moderation`',
-            inline: false,
-          },
-        ],
-      };
-      return await message.channel.send({ embeds: [errorEmbed] });
-    }
+    return await message.channel.send({ embeds: allEmbeds });
   }
 
   // ===== !WELCOMECHANNEL COMMAND =====
