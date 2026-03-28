@@ -1,0 +1,23 @@
+{
+  "categories": [
+    {
+      "id": "setup",
+      "name": "⚙️ System Setup",
+      "channels": [
+        {
+          "name": "🚀-get-started",
+          "type": "text",
+          "topic": "Select and deploy your server template",
+          "initialMessage": "👋 **Welcome! Let's build your server.**\n\nChoose a template below to automatically configure your channels and roles. \n\n**Select a Vibe:**\n🎮 **Gaming** - Squads, Clips, and Live Streams.\n💻 **Developer** - Projects, Code-Help, and Career.\n🏠 **Friends** - Casual chat and Media dumps.\n\n*Click a button below to begin installation.*"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "Bot Manager",
+      "color": "#5865F2",
+      "permissions": ["administrator"]
+    }
+  ]
+}

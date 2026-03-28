@@ -130,8 +130,8 @@ client.on('messageCreate', async (message) => {
           inline: false,
         },
         {
-          name: '!setup [template] [--name "Server Name"]',
-          value: 'Setup the server with channels and categories\nExamples:\n`!setup`\n`!setup template-bot-community.json`\n`!setup --name "My Server"`\n`!setup template-bot-community.json --name "Template Bot Community"`',
+          name: '!setup [template]',
+          value: 'Setup the server with channels and categories\nExamples:\n`!setup`\n`!setup template-bot-community.json`',
           inline: false,
         },
         {
@@ -227,24 +227,13 @@ client.on('messageCreate', async (message) => {
 
     try {
       // PARSE ARGUMENTS
-      // Extract template name and custom server name from command
+      // Extract template name from command
       const args = message.content.slice(6).trim().split(' ');
       let templateName = 'server-template.json';  // Default template
-      let customServerName = null;
 
-      // Check for template name (first arg, doesn't start with --)
-      if (args[0] && !args[0].startsWith('--')) {
+      // Check for template name (first arg)
+      if (args[0] && args[0].trim()) {
         templateName = args[0];
-      }
-
-      // Check for --name flag to set custom server name
-      const nameIndex = message.content.indexOf('--name ');
-      if (nameIndex !== -1) {
-        const nameStart = nameIndex + 7;
-        const nameEnd = message.content.indexOf('"', nameStart + 1);
-        if (nameEnd !== -1) {
-          customServerName = message.content.substring(nameStart + 1, nameEnd);
-        }
       }
       
       // LOAD TEMPLATE

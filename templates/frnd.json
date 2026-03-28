@@ -1,0 +1,77 @@
+{
+  "categories": [
+    {
+      "id": "gaming-zone",
+      "name": "🎮 The War Room",
+      "channels": [
+        {
+          "name": "🔥-lobby",
+          "type": "text",
+          "topic": "Main gaming chat and finding a group",
+          "initialMessage": "🔥 **The Lobby**\n\nWho's hopping on? Ping the crew and let's get a stack going."
+        },
+        {
+          "name": "🎬-clips",
+          "type": "text",
+          "topic": "Post your best plays and funny fails",
+          "initialMessage": "🎬 **Clip it or it didn't happen.**\n\nDrop your highlights, lowlights, and cracked moments here."
+        },
+        {
+          "name": "📈-patch-notes",
+          "type": "text",
+          "topic": "Game updates, news, and leaks",
+          "initialMessage": "📈 **Patch Notes & News**\n\nStay updated on the latest buffs, nerfs, and game releases."
+        },
+        {
+          "name": "🔊 Squad (2-4)",
+          "type": "voice"
+        },
+        {
+          "name": "🔊 Full Stack (5+)",
+          "type": "voice"
+        },
+        {
+          "name": "📺 Live Stream",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "id": "hangout",
+      "name": "🛋️ Chill Spot",
+      "channels": [
+        {
+          "name": "💬-general",
+          "type": "text",
+          "topic": "Casual talk when not gaming",
+          "initialMessage": "💬 **General Chat**\n\nFor everything that isn't about the scoreboard."
+        },
+        {
+          "name": "🎧 The Lounge",
+          "type": "voice"
+        },
+        {
+          "name": "💤 AFK",
+          "type": "voice"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "Admin",
+      "color": "#FF4655",
+      "permissions": ["administrator"]
+    },
+    {
+      "name": "Gamer",
+      "color": "#00F5FF",
+      "permissions": ["manageMessages"]
+    },
+    {
+      "name": "Lurker",
+      "color": "#99AAB5",
+      "permissions": []
+    }
+  ]
+}

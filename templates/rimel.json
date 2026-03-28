@@ -1,0 +1,178 @@
+{
+  "categories": [
+    {
+      "id": "important",
+      "name": "⭐ ━ ━ ⟫  Important  《 ━ ━ ⭐",
+      "channels": [
+        {
+          "name": "📋┃rules-n-info",
+          "type": "text",
+          "topic": "Server rules and essential information",
+          "initialMessage": "📜 **Rules & Info**\n\nPlease read our community guidelines to ensure a great experience for everyone."
+        },
+        {
+          "name": "📢┃announcement",
+          "type": "text",
+          "topic": "Official server updates",
+          "initialMessage": "📢 **Announcements**\n\nStay tuned for the latest news regarding the server!"
+        },
+        {
+          "name": "🎉┃giveaways",
+          "type": "text",
+          "topic": "Current and past giveaways",
+          "initialMessage": "🎉 **Giveaways**\n\nGood luck to everyone participating in our latest drops!"
+        },
+        {
+          "name": "⚡┃events┃🎂",
+          "type": "text",
+          "topic": "Community events and birthdays",
+          "initialMessage": "⚡ **Events**\n\nCheck here for upcoming community nights and special celebrations!"
+        },
+        {
+          "name": "🎮┃free",
+          "type": "text",
+          "topic": "Free games and loot alerts",
+          "initialMessage": "🎮 **Free Stuff**\n\nNever miss a free game or limited-time deal."
+        },
+        {
+          "name": "⚔️┃reviews",
+          "type": "text",
+          "topic": "Member feedback and reviews",
+          "initialMessage": "⚔️ **Reviews**\n\nLet us know how we're doing or review your favorite games."
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "name": "⭐ ━ ━ ⟫  General  《 ━ ━ ⭐",
+      "channels": [
+        {
+          "name": "💬┃chat",
+          "type": "text",
+          "topic": "The main hangout spot",
+          "initialMessage": "💬 **General Chat**\n\nWelcome! Jump in and start a conversation."
+        },
+        {
+          "name": "⛏️┃mc-rd",
+          "type": "text",
+          "topic": "Minecraft related discussion",
+          "initialMessage": "⛏️ **Minecraft Chat**\n\nDiscuss your builds and survival tips here."
+        },
+        {
+          "name": "📱┃media",
+          "type": "text",
+          "topic": "Share your photos and videos",
+          "initialMessage": "📱 **Media Gallery**\n\nDrop your cool shots and clips here!"
+        },
+        {
+          "name": "🍕┃foodcorner",
+          "type": "text",
+          "topic": "Food pics and recipes",
+          "initialMessage": "🍕 **Food Corner**\n\nWhat are you eating today? Share it with the crew."
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "name": "⭐ ━ ━ ⟫  Voice  《 ━ ━ ⭐",
+      "channels": [
+        {
+          "name": "🙁┃DiEcide ❓ 2do",
+          "type": "voice"
+        },
+        {
+          "name": "🆕┃Create your VC",
+          "type": "voice"
+        },
+        {
+          "name": "🛌┃[s] Red's Pillow Fort",
+          "type": "voice"
+        },
+        {
+          "name": "🎬┃[i] Star Cineplex",
+          "type": "voice"
+        },
+        {
+          "name": "🥤┃[s] GHOST'S TORTURE CELL",
+          "type": "voice"
+        },
+        {
+          "name": "🔊┃Toilet (AFK)",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "id": "bot-house",
+      "name": "⭐ ━ ━ ⟫  B♡T House  《 ━ ━ ⭐",
+      "channels": [
+        {
+          "name": "🤖┃bot-spam",
+          "type": "text",
+          "topic": "Use your bot commands here",
+          "initialMessage": "🤖 **Bot Spam**\n\nKeep the main channels clean by using all bot commands here."
+        },
+        {
+          "name": "🔢┃count",
+          "type": "text",
+          "topic": "Counting game channel",
+          "initialMessage": "🔢 **Counting**\n\nLet's see how high we can get! Start with **1**."
+        },
+        {
+          "name": "💸┃unbelievaboat",
+          "type": "text",
+          "topic": "Economy bot commands",
+          "initialMessage": "💸 **Economy**\n\nCheck your balance, work, and gamble responsibly!"
+        },
+        {
+          "name": "⚡┃pokétwo",
+          "type": "text",
+          "topic": "Catch 'em all!",
+          "initialMessage": "⚡ **Pokétwo**\n\nGood luck catching your next legendary!"
+        }
+      ]
+    },
+    {
+      "id": "samp",
+      "name": "⭐ ━ ━ ⟫  SAMP  《 ━ ━ ⭐",
+      "channels": [
+        {
+          "name": "📜┃samp-rules-n-info",
+          "type": "text",
+          "topic": "Rules for the SAMP server",
+          "initialMessage": "📜 **SAMP Rules**\n\nMake sure to follow the server guidelines to avoid being kicked or banned."
+        },
+        {
+          "name": "✅┃safety-verification",
+          "type": "text",
+          "topic": "Verify your account for server access",
+          "initialMessage": "✅ **Verification**\n\nPlease follow the steps here to gain full access to the SAMP channels."
+        },
+        {
+          "name": "💬┃samp-chat",
+          "type": "text",
+          "topic": "Discussion for SAMP players",
+          "initialMessage": "💬 **SAMP Chat**\n\nTalk about your adventures in San Andreas!"
+        },
+        {
+          "name": "🤖┃hzrp-bot",
+          "type": "text",
+          "topic": "SAMP Bot interface",
+          "initialMessage": "🤖 **HZRP Bot**\n\nInteract with the roleplay bot here."
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "LABS",
+      "color": "#2ECC71",
+      "permissions": ["administrator"]
+    },
+    {
+      "name": "Community",
+      "color": "#9B59B6",
+      "permissions": []
+    }
+  ]
+}

@@ -1,83 +1,23 @@
 {
   "categories": [
     {
-      "id": "general",
-      "name": "💬 General",
+      "id": "system",
+      "name": "⚙️ System",
       "channels": [
         {
-          "name": "welcome",
+          "name": "🧙-setup-wizard",
           "type": "text",
-          "topic": "Welcome to our community",
-          "initialMessage": "🎉 **Welcome!**\n\nGlad to have you here!\n\n• Get support\n• Share ideas\n• Suggest features\n• Connect with the community"
-        },
-        {
-          "name": "announcements",
-          "type": "text",
-          "topic": "Important announcements and updates",
-          "initialMessage": "📢 **Announcements**\n\nStay updated on important news and updates!\n\nEnable notifications to never miss an announcement."
-        },
-        {
-          "name": "general",
-          "type": "text",
-          "topic": "General discussion and chat",
-          "initialMessage": "💬 **General Chat**\n\nFeel free to chat about anything here!"
-        },
-        {
-          "name": "introductions",
-          "type": "text",
-          "topic": "Introduce yourself",
-          "initialMessage": "👋 **Introductions**\n\nTell us about yourself! Share your interests and what brings you here."
-        }
-      ]
-    },
-    {
-      "id": "support",
-      "name": "🆘 Support",
-      "channels": [
-        {
-          "name": "help",
-          "type": "text",
-          "topic": "Get help and support",
-          "initialMessage": "🆘 **Need Help?**\n\nAsk questions and get support from the community.\nOur team is here to assist!"
-        },
-        {
-          "name": "suggestions",
-          "type": "text",
-          "topic": "Suggest improvements and ideas",
-          "initialMessage": "💡 **Suggestions**\n\nHave an idea? We'd love to hear it!"
-        }
-      ]
-    },
-    {
-      "id": "voice",
-      "name": "🎙️ Voice",
-      "channels": [
-        {
-          "name": "General",
-          "type": "voice"
-        },
-        {
-          "name": "Lounge",
-          "type": "voice"
+          "topic": "Run commands here to deploy your server layout",
+          "initialMessage": "🧙 **Welcome to the Setup Wizard!**\n\nI have two professional templates ready for you. To install one, simply **copy and paste** the command below into this channel.\n\n---\n\n### 🏠 Option 1: Friends Group\n*Best for small squads, gaming, and hanging out.*\n`!setup frnd.json` \n\n### 💻 Option 2: Programming Club\n*Best for coding, collaboration, and career growth.*\n`!setup pc.json` \n\n---\n\n⚠️ **Note:** Running these commands will automatically create new categories and channels. Make sure I have **Administrator** permissions to complete the process!"
         }
       ]
     }
   ],
   "roles": [
     {
-      "name": "Admin",
-      "color": "#FF0000",
+      "name": "Bot Admin",
+      "color": "#F1C40F",
       "permissions": ["administrator"]
-    },
-    {
-      "name": "Moderator",
-      "color": "#0099FF",
-      "permissions": ["moderateMembers", "manageMessages"]
-    },
-    {
-      "name": "Member",
-      "color": "#808080",
-      "permissions": []
     }
   ]
 }

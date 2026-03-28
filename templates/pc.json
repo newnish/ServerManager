@@ -1,0 +1,104 @@
+{
+  "categories": [
+    {
+      "id": "reception",
+      "name": "🏢 Reception",
+      "channels": [
+        {
+          "name": "📢-announcements",
+          "type": "text",
+          "topic": "Official club news, hackathons, and meetings",
+          "initialMessage": "📢 **Club Announcements**\n\nStay tuned here for updates on upcoming workshops, hackathons, and general meetings!"
+        },
+        {
+          "name": "👋-introductions",
+          "type": "text",
+          "topic": "Introduce yourself and your tech stack",
+          "initialMessage": "👋 **Welcome to the Club!**\n\nTell us your name, major, and what languages you're currently learning or using!"
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "name": "💻 Development",
+      "channels": [
+        {
+          "name": "💬-general-dev",
+          "type": "text",
+          "topic": "General programming talk and tech news",
+          "initialMessage": "💬 **General Dev Chat**\n\nDiscuss the latest frameworks, tools, or news in the tech world here."
+        },
+        {
+          "name": "🆘-code-help",
+          "type": "text",
+          "topic": "Get help with bugs and logic (No homework answers!)",
+          "initialMessage": "🆘 **Need Help?**\n\nDrop your code snippets and error logs here. Remember: we help you learn, we don't do your homework for you!"
+        },
+        {
+          "name": "🚀-projects",
+          "type": "text",
+          "topic": "Showcase your work and find collaborators",
+          "initialMessage": "🚀 **Project Showcase**\n\nWorking on something cool? Share your GitHub repos or find a team for your next big idea."
+        }
+      ]
+    },
+    {
+      "id": "career",
+      "name": "💼 Career & Growth",
+      "channels": [
+        {
+          "name": "🎯-job-board",
+          "type": "text",
+          "topic": "Internships, full-time roles, and gig opportunities",
+          "initialMessage": "💼 **Job Board**\n\nPost or find the latest internship and job opportunities in tech."
+        },
+        {
+          "name": "📄-cv-review",
+          "type": "text",
+          "topic": "Get feedback on your resume and portfolio",
+          "initialMessage": "📄 **Resume & Portfolio Review**\n\nDrop your CV or portfolio link for constructive feedback from peers and seniors."
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "name": "🎙️ Collab Space",
+      "channels": [
+        {
+          "name": "🧠 Pair Programming",
+          "type": "voice"
+        },
+        {
+          "name": "☕ The Breakroom",
+          "type": "voice"
+        },
+        {
+          "name": "🎤 Workshop Room",
+          "type": "voice"
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "Executive",
+      "color": "#E74C3C",
+      "permissions": ["administrator"]
+    },
+    {
+      "name": "Lead Developer",
+      "color": "#F1C40F",
+      "permissions": ["manageMessages", "manageChannels"]
+    },
+    {
+      "name": "Member",
+      "color": "#2ECC71",
+      "permissions": []
+    },
+    {
+      "name": "Alumni",
+      "color": "#9B59B6",
+      "permissions": []
+    }
+  ]
+}
