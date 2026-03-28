@@ -55,19 +55,19 @@ function disableWelcomeChannel(guildId) {
 
 /**
  * Load template JSON file from templates folder
- * @param {string} templateName - Name of the template file (default: default.json)
+ * @param {string} templateName - Name of the template file (default: server-template.json)
  * @returns {object} Parsed template JSON object
  * @throws {Error} If template file doesn't exist
  */
-function loadTemplate(templateName = 'default.json') {
+function loadTemplate(templateName = 'server-template.json') {
   const templatePath = path.join(__dirname, 'templates', templateName);
   
   // Check if specified template exists
   if (!fs.existsSync(templatePath)) {
     // Fall back to default template if file doesn't exist
-    const defaultPath = path.join(__dirname, 'templates', 'default.json');
+    const defaultPath = path.join(__dirname, 'templates', 'server-template.json');
     if (!fs.existsSync(defaultPath)) {
-      throw new Error('No template found! Create templates/default.json');
+      throw new Error('No template found! Create templates/server-template.json');
     }
     return JSON.parse(fs.readFileSync(defaultPath, 'utf8'));
   }
@@ -213,31 +213,6 @@ client.on('messageCreate', async (message) => {
     await message.channel.send({ embeds: [embed] });
   }
 
-  if (message.content.startsWith('.say ')) {
-    // Check if user is admin
-    if (!message.member.permissions.has('Administrator')) {
-      return await message.channel.send('❌ Only server admins can use this command!');
-    }
-
-    // Get the message content
-    const sayMessage = message.content.slice(5).trim();
-
-    if (!sayMessage) {
-      return await message.channel.send('❌ Please provide a message to send!');
-    }
-
-    try {
-      // Send the anonymous message
-      await message.channel.send(sayMessage);
-
-      // Delete the original command message
-      await message.delete();
-    } catch (error) {
-      console.error(error);
-      await message.channel.send('❌ Error sending message!');
-    }
-  }
-
   // ===== !SETUP COMMAND =====
   // Main command to set up server structure from templates
   // Syntax: !setup [template-name] [--name "Server Name"]
@@ -254,7 +229,7 @@ client.on('messageCreate', async (message) => {
       // PARSE ARGUMENTS
       // Extract template name and custom server name from command
       const args = message.content.slice(6).trim().split(' ');
-      let templateName = 'default.json';  // Default template
+      let templateName = 'server-template.json';  // Default template
       let customServerName = null;
 
       // Check for template name (first arg, doesn't start with --)
